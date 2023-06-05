@@ -8,7 +8,8 @@ My objectives for this phase are to create the JavaScript project and to create 
 
 * [ ] Create the JavaScript project
 * [ ] Create the layout of the game environment
-* [ ] Create a layout of buttons
+* [ ] Create the most important buttons
+* [ ] Create a button which can be clicked to increase the value of a variable "clicks" by 1 and display the number of clicks to the user
 
 ### Usability Features
 
