@@ -4,10 +4,11 @@
 
 ### Objectives
 
-\[describe the cycle]
+My objectives for this phase are to create the JavaScript project and to create the basic layout for the environment in my game and to create a basic layout of where each of the buttons will be. This will allow me to begin working out functionality of these buttons.
 
-* [x] Do a thing
-* [x] Do another thing
+* [ ] Create the JavaScript project
+* [ ] Create the layout of the game environment
+* [ ] Create a layout of buttons
 
 ### Usability Features
 
