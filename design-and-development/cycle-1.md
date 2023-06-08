@@ -7,17 +7,15 @@
 My objectives for this phase are to create the JavaScript project and to create the basic layout for the environment in my game and to create a basic layout of where each of the buttons will be. This will allow me to begin working out functionality of these buttons.
 
 * [ ] Create the JavaScript project
-* [ ] Create the layout of the game environment
-* [ ] Create the most important buttons
-* [ ] Create a button which can be clicked to increase the value of a variable "clicks" by 1 and display the number of clicks to the user
+* [ ] Create a button which can be clicked to increase the value of "clicks" which is displayed to the user
 
 ### Usability Features
 
 ### Key Variables
 
-| Variable Name | Use                   |
-| ------------- | --------------------- |
-| foo           | does something useful |
+| Variable Name | Use                                                                             |
+| ------------- | ------------------------------------------------------------------------------- |
+| Clicks        | Increases by one when the button is clicked and displays the value to the user. |
 
 ### Pseudocode
 
