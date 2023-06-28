@@ -8,14 +8,17 @@ My objectives for this phase are to create the JavaScript project and to create 
 
 * [ ] Create the JavaScript project
 * [ ] Create a button which can be clicked to increase the value of "clicks" which is displayed to the user
+* [ ] Create a cursor system which can be bought to automate clicks
 
 ### Usability Features
 
 ### Key Variables
 
-| Variable Name | Use                                                                             |
-| ------------- | ------------------------------------------------------------------------------- |
-| Clicks        | Increases by one when the button is clicked and displays the value to the user. |
+| Variable Name | Use                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------ |
+| Clicks        | Increases by one when the button is clicked and displays the value to the user.            |
+| Cursors       | The number of cursors the user has. Once the user purchases a cursor, clicks is automated. |
+| cursorCost    | The cost to purchase cursors.                                                              |
 
 ### Pseudocode
 
