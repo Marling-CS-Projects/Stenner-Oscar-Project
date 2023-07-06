@@ -66,24 +66,28 @@ function checkAchievements():
 ## Development
 
 ```javascript
-let score = 0;
-let multiplierCost = 100;
-let multiplierCount = 0;
+let score = 1000;
+let cursorCost = 100;
+let cursors = 0;
 
-document.getElementById("multiplierbutton").innerText = "Purchase Multiplier" + "[" + multiplierCost + "]"
+let scoreInc = cursors
+
+let achievements = [false, false, false];
+
+document.getElementById("multiplierbutton").innerText = "Purchase Cursor" + "[" + cursorCost + "]"
 
 function incrementScore() {
-  score +=multiplierCount+1;
+  score+=1
   document.getElementById("clicks").innerText = "clicks: " + score
-}
+} //function which makes it so that the value of score increases every time the clicks button is clicked
 
-function purchaseMultiplier() {
-  if (score>=multiplierCost) {
-    score -= multiplierCost;
-    multiplierCount++;
-    multiplierCost*=1.5
-    document.getElementById("multiplierbutton").innerText = "Purchase Multiplier" + "[" + multiplierCost + "]"
-    document.getElementById("multipliers").innerText = "multipliers: " + multiplierCount
+function purchaseCursor() {
+  if (score>=cursorCost) {
+    score -= cursorCost;
+    cursors++;
+    cursorCost *=1.5;
+    document.getElementById("multiplierbutton").innerText = "Purchase cursor" + "[" + cursorCost + "]"
+    document.getElementById("multipliers").innerText = "cursors:: " + cursors
     document.getElementById("clicks").innerText = "clicks: " + score
   }
 }
@@ -100,12 +104,22 @@ This is the first javascript code I created. The first function increments the s
   <title>Gym Clicker Game</title>
 </head>
 <body>
+  <h1>Gym Clicker Game</h1>
   <button onclick="incrementScore()">Click</button>
   <p id="clicks"></p>
-  <button id="multiplierbutton" onclick="purchaseMultiplier()">Purchase Multiplier</button>
+  <button id="multiplierbutton" onclick="purchaseCursor()">Purchase cursor</button>
   <p id="multipliers"></p>
+
+  <button onclick="checkAchievements()">Check achievements</button>
+
+  <h2>Achievements</h2>
+  <ul id="achievements">
+    <li id="achievement1">Achievement 1</li>
+    <li id="achievement2">Achievement 2</li>
+    <li id="achievement3">Achievement 3</li>
+  </ul>
 </body>
-<script src="main.js"></script></script>
+<script src="main.js"></script>
 </html>
 ```
 
@@ -113,8 +127,8 @@ This is the first HTML code I created. It adds two buttons which, when clicked c
 
 ```javascript
 setInterval (function() {
-  if(multiplierCount>0) {
-    score +=multiplierCount+1;
+  if(cursors>0) {
+    score +=cursors;
   }
   document.getElementById("clicks").innerText = "clicks: " + score
 }, 1000);
@@ -137,9 +151,9 @@ function checkAchievements() {
   }
 
   // Achievement 3: Purchase 5 multipliers
-  if (multiplierCount >= 5 && achievements[2]==false) {
+  if (cursors >= 5 && achievements[2]==false) {
     achievements[2] = true;
-    document.getElementById("achievement3").innerText = "Unlocked 5 multipliers";
+    document.getElementById("achievement3").innerText = "Unlocked 5 cursors";
   }
 }
 ```
@@ -162,8 +176,6 @@ As it the value is multiplied by a decimal, the value of multiplierCost becomes 
 
 ## Testing
 
-
-
 ### Tests
 
 | Test | Instructions             | What I expect                                                                                                              | What actually happens | Pass/Fail |
@@ -175,6 +187,6 @@ As it the value is multiplied by a decimal, the value of multiplierCost becomes 
 
 ### Evidence
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (3).png>)
 
-![](<../.gitbook/assets/image (2).png>)
+![](../.gitbook/assets/image.png)
