@@ -8,18 +8,17 @@ My objectives for this cycle are to create the JavaScript and HTML project and t
 
 * [x] Create the JavaScript project
 * [x] Create a button which can be clicked to increase the value of "clicks" which is displayed to the user
-* [x] Create a mutliplier system which makes the players clicks increase the score by a higher amount
-* [x] Create a cursor system which can be bought to automate clicks
+* [x] Create a cursor system which can be bought to automate clicks and to increase the rate at which score increases
 
 ### Usability Features
 
 ### Key Variables
 
-| Variable Name   | Use                                                                             |
-| --------------- | ------------------------------------------------------------------------------- |
-| score           | Increases by one when the button is clicked and displays the value to the user. |
-| multiplierCount | The number of multipliers the player has purchased.                             |
-| multiplierCost  | The cost to purchase multipliers.                                               |
+| Variable Name | Use                                                                             |
+| ------------- | ------------------------------------------------------------------------------- |
+| score         | Increases by one when the button is clicked and displays the value to the user. |
+| cursors       | The number of cursors the player has purchased.                                 |
+| cursorCost    | The cost to purchase cursors.                                                   |
 
 ### Pseudocode
 
@@ -90,7 +89,7 @@ function purchaseMultiplier() {
 }
 ```
 
-This is the first javascript code I created. The first function increments the score by one (without any multipliers) and is called when a button is clicked. The second function is called when another button for purchasing multipliers is purchased.
+This is the first javascript code I created. The first function increments the score by one and is called when a button is clicked. The second function is called when another button for purchasing cursors is clicked. The more cursors the user has, the faster score increases.
 
 ```html
 <!DOCTYPE html>
@@ -110,7 +109,7 @@ This is the first javascript code I created. The first function increments the s
 </html>
 ```
 
-This is the first HTML code I created. It adds two buttons which, when clicked call the functions mentioned in the JavaScript code which increase the value of score by 1 and the value of multiplierCount by 1. As multiplierCount increases, the rate at which score increases is raised.
+This is the first HTML code I created. It adds two buttons which, when clicked call the functions mentioned in the JavaScript code which increase the value of score by 1 and the value of cursors by 1. As cursors increases, the rate at which score increases is raised.
 
 ```javascript
 setInterval (function() {
@@ -121,7 +120,7 @@ setInterval (function() {
 }, 1000);
 ```
 
-I then added this code which makes it so that the clicking process is automated once the first multiplier is purchased. If the value of multiplierCount is greater than 0, the value of score increases every 1000ms, or every second.
+I then added this code which makes it so that the clicking process is automated once the first cursor is purchased. If the value of cursors is greater than 0, the value of score increases every 1000ms, or every second.
 
 ```javascript
 function checkAchievements() {
@@ -149,13 +148,15 @@ I created a very simple achievement system which I can improve as I continue to 
 
 ### Outcome
 
-At the end of this cycle, I have created two buttons and a clicking system. When the button is clicked, the players score increases by one, this is the main feature of clicker games. This will allow me to create a shop system where players can use their score to purchase upgrades. I have created a button which allows player to purchase multipliers which increase the rate at which score increases and also automates the clicking process for the player.
+At the end of this cycle, I have created two buttons and a clicking system. When the button is clicked, the players score increases by one, this is the main feature of clicker games. This will allow me to create a shop system where players can use their score to purchase upgrades. I have created a button which allows player to purchase cursors which increase the rate at which score increases and also automates the clicking process for the player.
 
 I have also written a few functions, which do not yet work, but may be useful when creating the shop and upgrades and boosts in the future.
 
 ### Challenges
 
 A challenge I faced was getting the display to update after being clicked. The value of clicks would increase but the web page did not show the number increasing.
+
+Another challenge was making the score increase automatically only once a cursor is purchased.
 
 As it the value is multiplied by a decimal, the value of multiplierCost becomes a very long decimal very quickly as the player purchases more multipliers. I will therefore have to make the value rounded as it increases.
 
@@ -165,10 +166,12 @@ As it the value is multiplied by a decimal, the value of multiplierCost becomes 
 
 ### Tests
 
-| Test | Instructions  | What I expect     | What actually happens | Pass/Fail |
-| ---- | ------------- | ----------------- | --------------------- | --------- |
-| 1    | Run code      | Thing happens     | As expected           | Pass      |
-| 2    | Press buttons | Something happens | As expected           | Pass      |
+| Test | Instructions             | What I expect                                                                                                              | What actually happens | Pass/Fail |
+| ---- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
+| 1    | Run code                 | Page opens with buttons for clicking to increase score and buttons to purchase cursors and buttons to update achievements. | As expected           | Pass      |
+| 2    | Press click              | Score increases.                                                                                                           | As expected           | Pass      |
+| 3    | Press purchase cursor    | Cursor count increases and the rate and score increases at a faster rate.                                                  | As expected           | Pass      |
+| 4    | Press check achievements | If any of the achievements have been reached, then the achievements list will update when the button is pressed.           | As expected           | Pass      |
 
 ### Evidence
 
