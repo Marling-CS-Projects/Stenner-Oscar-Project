@@ -54,7 +54,7 @@ let scoreInc = cursors
 document.getElementById("multiplierbutton").innerText = "Purchase Cursor" + "[" + cursorCost + "]"
 
 function incrementScore() {
-  score+=1
+  score+=cursors+1
   document.getElementById("clicks").innerText = "clicks: " + score
 } //function which makes it so that the value of score increases every time the clicks button is clicked
 
