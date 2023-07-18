@@ -8,7 +8,7 @@ My objectives for this cycle are to create the JavaScript and HTML project and t
 
 * [x] Create the JavaScript project
 * [x] Create a button which can be clicked to increase the value of "clicks" which is displayed to the user
-* [x] Create a cursor system which can be bought to automate clicks and to increase the rate at which score increases
+* [x] Create a cursor system which can be bought and to increase the rate at which score increases
 
 ### Usability Features
 
@@ -26,9 +26,6 @@ My objectives for this cycle are to create the JavaScript and HTML project and t
 score = 1000
 multiplierCost = 100
 multiplierCount = 0
-
-achievements = [false, false, false]
-
 Set "Purchase Multiplier [100]" as the text of element with id "multiplierbutton"
 
 function incrementScore():
@@ -43,24 +40,6 @@ function purchaseMultiplier():
         Set "Purchase Multiplier" + "[" + multiplierCost + "]" as the text of element with id "multiplierbutton"
         Set "multipliers: " + multiplierCount as the text of element with id "multipliers"
         Set "clicks: " + score as the text of element with id "clicks"
-
-repeat every 1 second:
-    if multiplierCount > 0:
-        score = score + multiplierCount + 1
-    Set "clicks: " + score as the text of element with id "clicks"
-
-function checkAchievements():
-    if score >= 10 and achievements[0] == false:
-        achievements[0] = true
-        Set "Reached score 10" as the text of element with id "achievement1"
-
-    if score >= 100 and achievements[1] == false:
-        achievements[1] = true
-        Set "Reached score 100" as the text of element with id "achievement2"
-
-    if multiplierCount >= 5 and achievements[2] == false:
-        achievements[2] = true
-        Set "Unlocked 5 multipliers" as the text of element with id "achievement3"
 ```
 
 ## Development
@@ -71,8 +50,6 @@ let cursorCost = 100;
 let cursors = 0;
 
 let scoreInc = cursors
-
-let achievements = [false, false, false];
 
 document.getElementById("multiplierbutton").innerText = "Purchase Cursor" + "[" + cursorCost + "]"
 
@@ -109,15 +86,6 @@ This is the first javascript code I created. The first function increments the s
   <p id="clicks"></p>
   <button id="multiplierbutton" onclick="purchaseCursor()">Purchase cursor</button>
   <p id="multipliers"></p>
-
-  <button onclick="checkAchievements()">Check achievements</button>
-
-  <h2>Achievements</h2>
-  <ul id="achievements">
-    <li id="achievement1">Achievement 1</li>
-    <li id="achievement2">Achievement 2</li>
-    <li id="achievement3">Achievement 3</li>
-  </ul>
 </body>
 <script src="main.js"></script>
 </html>
@@ -125,44 +93,11 @@ This is the first javascript code I created. The first function increments the s
 
 This is the first HTML code I created. It adds two buttons which, when clicked call the functions mentioned in the JavaScript code which increase the value of score by 1 and the value of cursors by 1. As cursors increases, the rate at which score increases is raised.
 
-```javascript
-setInterval (function() {
-  if(cursors>0) {
-    score +=cursors;
-  }
-  document.getElementById("clicks").innerText = "clicks: " + score
-}, 1000);
-```
-
-I then added this code which makes it so that the clicking process is automated once the first cursor is purchased. If the value of cursors is greater than 0, the value of score increases every 1000ms, or every second.
-
-```javascript
-function checkAchievements() {
-  // Achievement 1: Reach a score of 10
-  if (score >= 10 && achievements[0]==false) {
-    achievements[0] = true;
-    document.getElementById("achievement1").innerText = "Reached score 10";
-  }
-
-  // Achievement 2: Reach a score of 100
-  if (score >= 100 && achievements[1]==false) {
-    achievements[1] = true;
-    document.getElementById("achievement2").innerText = "Reached score 100";
-  }
-
-  // Achievement 3: Purchase 5 multipliers
-  if (cursors >= 5 && achievements[2]==false) {
-    achievements[2] = true;
-    document.getElementById("achievement3").innerText = "Unlocked 5 cursors";
-  }
-}
-```
-
 I created a very simple achievement system which I can improve as I continue to create my game. I did this by creating an array called achievements which stores whether each achievement is completed, by "true" for completed and "false" for not completed. Once the requirements are met, there is a list on the HTML code which will display the achievements. I also created a button which can be pressed to call this function and update the list of achievements.
 
 ### Outcome
 
-At the end of this cycle, I have created two buttons and a clicking system. When the button is clicked, the players score increases by one, this is the main feature of clicker games. This will allow me to create a shop system where players can use their score to purchase upgrades. I have created a button which allows player to purchase cursors which increase the rate at which score increases and also automates the clicking process for the player.
+At the end of this cycle, I have created two buttons and a clicking system. When the button is clicked, the players score increases by one, this is the main feature of clicker games. This will allow me to create a shop system where players can use their score to purchase upgrades. I have created a button which allows player to purchase cursors which increase the rate at which score increases.
 
 I have also written a few functions, which do not yet work, but may be useful when creating the shop and upgrades and boosts in the future.
 
@@ -170,23 +105,18 @@ I have also written a few functions, which do not yet work, but may be useful wh
 
 A challenge I faced was getting the display to update after being clicked. The value of clicks would increase but the web page did not show the number increasing.
 
-Another challenge was making the score increase automatically only once a cursor is purchased.
-
 As it the value is multiplied by a decimal, the value of multiplierCost becomes a very long decimal very quickly as the player purchases more multipliers. I will therefore have to make the value rounded as it increases.
 
 ## Testing
 
 ### Tests
 
-| Test | Instructions             | What I expect                                                                                                              | What actually happens | Pass/Fail |
-| ---- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
-| 1    | Run code                 | Page opens with buttons for clicking to increase score and buttons to purchase cursors and buttons to update achievements. | As expected           | Pass      |
-| 2    | Press click              | Score increases.                                                                                                           | As expected           | Pass      |
-| 3    | Press purchase cursor    | Cursor count increases and the rate and score increases at a faster rate.                                                  | As expected           | Pass      |
-| 4    | Press check achievements | If any of the achievements have been reached, then the achievements list will update when the button is pressed.           | As expected           | Pass      |
+| Test | Instructions          | What I expect                                                                                                              | What actually happens | Pass/Fail |
+| ---- | --------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
+| 1    | Run code              | Page opens with buttons for clicking to increase score and buttons to purchase cursors and buttons to update achievements. | As expected           | Pass      |
+| 2    | Press click           | Score increases.                                                                                                           | As expected           | Pass      |
+| 3    | Press purchase cursor | Cursor count increases and the rate and score increases at a faster rate.                                                  | As expected           | Pass      |
 
 ### Evidence
-
-![](<../.gitbook/assets/image (3).png>)
 
 ![](../.gitbook/assets/image.png)
