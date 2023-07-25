@@ -119,4 +119,4 @@ As it the value is multiplied by a decimal, the value of multiplierCost becomes 
 
 ### Evidence
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (2).png>)
