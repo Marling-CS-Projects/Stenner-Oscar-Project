@@ -117,6 +117,5 @@ As it the value is multiplied by a decimal, the value of multiplierCost becomes 
 | 2    | Press click           | Score increases.                                                                                                           | As expected           | Pass      |
 | 3    | Press purchase cursor | Cursor count increases and the rate and score increases at a faster rate.                                                  | As expected           | Pass      |
 
-### Evidence
-
 ![](<../.gitbook/assets/image (1) (2).png>)
+
