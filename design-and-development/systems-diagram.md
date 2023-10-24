@@ -4,107 +4,53 @@
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-This diagram shows the different parts of the game that I will focus on creating. I have split each section into smaller sub-sections. Throughout the development stage, I will pick one or two of these sections to focus on at a time to gradually build up and piece together the game. I have broken the project down this way as it roughly corresponds to the success criteria.
+This diagram represents the main aspects of my clicker game which I will be focusing on throughout development in order to stick to my success criteria. The steps to complete the game have been broken down into sections and during development of my game I will focus on each step individually ensuring that enough time is spent on each feature.
 
 ## Usability Features
 
-Usability is an important aspect to my game as I want it to be accessible to all. There are 5 key points of usability to create the best user experience that I will be focusing on when developing my project. These are:
+Usability is of paramount importance as the game ideally should be accessible to as wide of an audience as possible. To provide a positive experience to the players, the following aspects must be prioritised.
 
 ### Effective
 
-Users can achieve the goal with completeness and accuracy. To do this, I will make it easy for the players to realise that they need to reach a goal in order to complete a level. I will make this goal clear to see so there is no confusion over where the players need to go.
+My clicker game should clearly communicate the objectives and goals to the players, the design, controls, and interface should align, making the game intuitive for players to interact with.
 
 #### Aims
 
-* Create a clear goal to reach to determine the end of a level
-* Create a clear goal for any multiplayer modes
+* Clearly define in game objectives and ensure players are aware of them.
+* Ensure that gameplay mechanics support players in achieving these objectives.
 
 ### Efficiency
 
-The speed and accuracy to which a user can complete the goal. To do this, I will create a menu system which is easy to navigate through in order for to find what you are looking for. The information which is more important can be found with less clicks.
+The games design should minimize unnecessary actions and the controls and user interface of the game should be easy to understand and navigate.
 
 #### Aims
 
-* Create a menu system that is quick and easy to navigate through
-* Create a controls system that isn't too complicated but allows the player to do multiple actions
+* Have a button layout which allows for fast navigation.
+* Have controls which can allow players to effectively interact with my clicker game.
 
 ### Engaging
 
-The solution is engaging for the user to use. To do this, I will create 5 levels and an online multiplayer mode to keep the players engaged and allow them to have fun while playing the game. Using vector style art will also make the game nicer to look at than blocks, so will draw more people in, keeping them engaged.
+The game should capture and retain players attention. This involves dynamic and interesting gameplay mechanics and rewarding progression and achievement.
 
 #### Aims
 
-* Create a series of levels to work through
-* Create a multiplayer mode to play
-* Incorporate a style of game art the suits the game
+* Create a series of mechanics commonly found in clicker games like cursors.
+* Implement varying gameplay.
 
 ### Error Tolerant
 
-The solution should have as few errors as possible and if one does occur, it should be able to correct itself. To do this, I will write my code to manage as many different game scenarios as possible so that it will not crash when someone is playing it.
+The game should be robust and minimise the likelihood of errors or glitches. If an error does occur, it should not significantly disrupt the player experience.
 
 #### Aims
 
-* The game doesn't crash
-* The game does not contain any bugs that damage the user experience
+* The game should not crash.
+* The game should not contain any major bugs which hinder gameplay.
 
 ### Easy To Learn
 
-The solution should be easy to use and not be over complicated. To do this, I will create simple controls for the game. I will make sure that no more controls are added than are needed in order to keep them as simple as possible for the players.
+Clicker games are supposed to be simple and easy to learn. The gameplay should be easy to understand and interact with for the player. The objectives should be clear.
 
 #### Aims
 
-* Create a list of controls for the game
-* Create an in-level guide that helps players learn how to play the game
+* The controls should be not difficult to understand and similar to controls commonly used in other games.
 
-## Pseudocode for the Game
-
-### Pseudocode for game
-
-This is the basic layout of the object to store the details of the game. This will be what is rendered as it will inherit all important code for the scenes.
-
-```
-object Game
-    type: Phaser
-    parent: id of HTML element
-    width: width
-    height: height
-    physics: set up for physics
-    scenes: add all menus, levels and other scenes
-end object
-
-render Game to HTML web page
-```
-
-### Pseudocode for a level
-
-This shows the basic layout of code for a Phaser scene. It shows where each task will be executed.
-
-```
-class Level extends Phaser Scene
-
-    procedure preload
-        load all sprites and music
-    end procedure
-    
-    procedure create
-        start music
-        draw background
-        create players
-        create platforms
-        create puzzle elements
-        create enemies
-        create obstacles
-        create finishing position
-        create key bindings
-    end procedure
-    
-    procedure update
-        handle key presses
-        move player
-        move interactable objects
-        update animations
-        check if player at exit
-    end procedure
-    
-end class
-```
